@@ -1,0 +1,13 @@
+upstream nginxtest {
+server 54.173.65.214:8484;
+server 34.205.30.222:8484;
+}
+
+server {
+listen 80;
+server_name 54.147.79.15;
+
+location / {
+proxy_pass http://nginxtest/;
+}
+}
